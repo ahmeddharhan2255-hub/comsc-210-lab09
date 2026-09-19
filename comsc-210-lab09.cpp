@@ -15,6 +15,7 @@ void most_recent_game(array<int,SIZE> points);
 void sorted_points(array<int,SIZE> points);
 void points_sum(array<int,SIZE> points);
 void average(array<int,SIZE> points);
+void location(array<int,SIZE> points);
 
 int main(){
 
@@ -72,4 +73,9 @@ void average(const array<int,SIZE> points){
 
     cout << sum / size << endl;
 
+}
+
+void location(array<int,SIZE> points){
+    cout << "Location of the array: ";
+    points.data();
 }
