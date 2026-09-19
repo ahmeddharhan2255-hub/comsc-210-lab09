@@ -13,6 +13,8 @@ const int SIZE = 30;
 //Function Prototypes
 void most_recent_game(array<int,SIZE> points);
 void sorted_points(array<int,SIZE> points);
+void points_sum(array<int,SIZE> points);
+void average(array<int,SIZE> points);
 
 int main(){
 
@@ -46,5 +48,15 @@ void sorted_points(array<int,SIZE> points){
     cout << "Here are his points from low to high" << endl;
 
     sort(points.begin(), points.end());
-    for (int val: points) cout << val << " " << endl;
+    for (int val: points) cout << val << " ";
+}
+
+void points_sum(array<int,SIZE> points){
+    cout << "The sum of the points scored is: ";
+    int sum = accumulate(points.begin(),points.end(),0);
+    cout << sum;
+}
+
+void average(array<int,SIZE> points){
+    
 }
