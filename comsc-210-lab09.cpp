@@ -33,30 +33,43 @@ int main(){
 
     inputFile.close();
 
+    cout << "STEPHEN CURRY STATS" << endl;
+
     most_recent_game(points);
 
     sorted_points(points);
 
+    points_sum(points);
+
+    average(points);
+
+    return 0;
 }
 
-void most_recent_game(array<int,SIZE> points){
-    cout << "Here are Stephen Curry's recent 30 games: ";
+void most_recent_game(const array<int,SIZE> points){
+    cout << "Recent game points: ";
     cout << points.front() << endl;
 }
 
 void sorted_points(array<int,SIZE> points){
-    cout << "Here are his points from low to high" << endl;
+    cout << "Past 30 game points from low to high" << endl;
 
     sort(points.begin(), points.end());
     for (int val: points) cout << val << " ";
+    cout << endl;
 }
 
-void points_sum(array<int,SIZE> points){
+void points_sum(const array<int,SIZE> points){
     cout << "The sum of the points scored is: ";
-    int sum = accumulate(points.begin(),points.end(),0);
-    cout << sum;
+    double sum = accumulate(points.begin(),points.end(),0);
+    cout << sum << endl;
 }
 
-void average(array<int,SIZE> points){
-    
+void average(const array<int,SIZE> points){
+    cout << "Average points scored: ";
+    int sum = accumulate(points.begin(),points.end(),0);
+    int size = points.size();
+
+    cout << sum / size << endl;
+
 }
