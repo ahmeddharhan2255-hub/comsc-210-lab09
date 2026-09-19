@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <algorithm>
+#include <numeric>
 #include <array>
 
 using namespace std;
@@ -9,7 +11,8 @@ using namespace std;
 const int SIZE = 30;
 
 //Function Prototypes
-void size(array<int,SIZE> points);
+void most_recent_game(array<int,SIZE> points);
+void sorted_points(array<int,SIZE> points);
 
 int main(){
 
@@ -28,10 +31,20 @@ int main(){
 
     inputFile.close();
 
+    most_recent_game(points);
+
+    sorted_points(points);
 
 }
 
-void size(array<int,SIZE> points){
+void most_recent_game(array<int,SIZE> points){
     cout << "Here are Stephen Curry's recent 30 games: ";
-    
+    cout << points.front() << endl;
+}
+
+void sorted_points(array<int,SIZE> points){
+    cout << "Here are his points from low to high" << endl;
+
+    sort(points.begin(), points.end());
+    for (int val: points) cout << val << " " << endl;
 }
